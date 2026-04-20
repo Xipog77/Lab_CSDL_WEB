@@ -54,15 +54,15 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'classicmodels',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'USER': 'django_user',
+        'PASSWORD': 'django_password',
+        'HOST': 'mysql',  # Use service name instead of localhost
         'PORT': '3306',
     }
 }

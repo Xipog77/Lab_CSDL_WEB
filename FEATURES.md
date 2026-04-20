@@ -6,6 +6,60 @@ ClassicModels Dashboard là một ứng dụng web toàn diện xây dựng bằ
 
 ---
 
+## 🤖 Module 4: Trợ Lý Ảo (Virtual Assistant)
+
+### 4.1 ChatBox - Trợ Lý Thông Minh
+
+**Vị trí:** `Components > Chat Assistant > Virtual Assistant Tab`
+
+**Chức năng Chính:**
+- **Giao diện chat hiện đại**: Thiết kế tương tự các ứng dụng chat phổ biến
+- **Trợ lý ảo thông minh**: Tự động trả lời dựa trên từ khóa và ngữ cảnh
+- **Typing indicators**: Hiệu ứng "đang gõ" khi bot đang xử lý
+- **Lịch sử chat**: Lưu trữ và hiển thị lịch sử cuộc trò chuyện
+- **Responsive design**: Tương thích với mọi thiết bị
+
+**Tính Năng Chat:**
+- **Chào hỏi tự động**: Bot tự giới thiệu và chào đón người dùng
+- **Phân tích từ khóa**: Nhận diện và phản hồi theo chủ đề
+- **Đa ngôn ngữ**: Hỗ trợ tiếng Việt và tiếng Anh
+- **Trả lời thông minh**: Cung cấp thông tin liên quan đến ClassicModels
+
+**Từ Khóa Hỗ Trợ:**
+| Từ Khóa | Phản Hồi |
+|---------|---------|
+| `khách hàng`, `customer` | Hướng dẫn tìm kiếm khách hàng |
+| `đơn hàng`, `order` | Hướng dẫn tìm kiếm đơn hàng |
+| `sản phẩm`, `product` | Hướng dẫn tìm kiếm sản phẩm |
+| `thống kê`, `statistics` | Hướng dẫn xem thống kê |
+| `biểu đồ`, `chart` | Hướng dẫn xem biểu đồ |
+| `cảm ơn`, `thank` | Lời chào kết thúc thân thiện |
+| `chào`, `hello` | Lời chào đón |
+
+**Ví Dụ Tương Tác:**
+
+```
+👤 Bạn: "Tôi muốn tìm khách hàng từ USA"
+🤖 Bot: "Tôi có thể giúp bạn tìm kiếm thông tin khách hàng. Bạn có thể tìm theo tên, quốc gia, hoặc thành phố. Bạn muốn tìm khách hàng nào?"
+
+👤 Bạn: "Hãy cho tôi xem thống kê đơn hàng"
+🤖 Bot: "Tôi có thể cung cấp thống kê về doanh số khách hàng, đơn hàng theo thời gian, và sản phẩm bán chạy. Bạn muốn xem thống kê gì?"
+```
+
+**Giao Diện:**
+- **Header**: Logo ClassicModels + tiêu đề "Trợ Lý Ảo"
+- **Chat Area**: Khu vực hiển thị tin nhắn với scroll tự động
+- **Input Area**: Ô nhập tin nhắn + nút gửi
+- **Avatar**: Icon robot cho bot, icon user cho người dùng
+- **Timestamp**: Hiển thị thời gian gửi tin nhắn
+
+**Responsive Features:**
+- **Mobile**: Chatbox tự động điều chỉnh kích thước
+- **Tablet**: Layout tối ưu cho màn hình trung bình
+- **Desktop**: Giao diện đầy đủ với sidebar
+
+---
+
 ## 🔍 Module 1: Tìm Kiếm (Search Module)
 
 ### 1.1 Tìm Kiếm Khách Hàng (Customer Search)

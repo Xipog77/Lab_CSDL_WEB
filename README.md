@@ -19,6 +19,12 @@
 - **Biểu đồ cột**: Top 10 khách hàng chi tiêu cao nhất
 - **Biểu đồ doanh thu**: Sản phẩm bán chạy nhất
 
+### 🤖 Trợ Lý Ảo (ChatBox)
+- **Chatbot thông minh**: Hỗ trợ tìm kiếm và trả lời câu hỏi
+- **Giao diện thân thiện**: UI chat hiện đại với typing indicators
+- **Phản hồi nhanh**: Tự động trả lời dựa trên từ khóa
+- **Đa ngôn ngữ**: Hỗ trợ tiếng Việt và tiếng Anh
+
 ## Công Nghệ
 
 ### Backend
@@ -35,12 +41,37 @@
 
 ## Hướng Dẫn Cài Đặt
 
-### Yêu Cầu
-- Python 3.8+
-- Node.js 14+
-- MySQL Server 5.7+
+### 🚀 Phương Pháp 1: Sử Dụng Docker (Khuyến Nghị)
 
-### Bước 1: Chuẩn Bị Cơ Sở Dữ Liệu
+**Yêu cầu**: Docker và Docker Compose đã được cài đặt
+
+```bash
+# 1. Clone hoặc di chuyển đến thư mục project
+cd /path/to/Lab_CSDL_WEB
+
+# 2. Chạy script Docker (tự động setup MySQL + Django)
+./docker.sh start
+
+# 3. Kiểm tra trạng thái services
+./docker.sh status
+
+# 4. Cài đặt frontend dependencies
+npm install
+
+# 5. Chạy React frontend
+npm start
+```
+
+**Truy cập ứng dụng:**
+- Frontend: `http://localhost:3000`
+- Backend API: `http://localhost:8000/api`
+- MySQL: `localhost:3306` (user: django_user, pass: django_password)
+
+### 🔧 Phương Pháp 2: Cài Đặt Thủ Công
+
+**Yêu cầu**: Python 3.8+, Node.js 14+, MySQL Server 5.7+
+
+#### Bước 1: Chuẩn Bị Cơ Sở Dữ Liệu
 
 **Khởi động MySQL:**
 ```bash
@@ -63,7 +94,7 @@ mysql -u root -p < mysqlsampledatabase.sql
 > mysql -u root < mysqlsampledatabase.sql
 > ```
 
-### Bước 2: Cài Đặt Backend
+#### Bước 2: Cài Đặt Backend
 
 ```bash
 cd /path/to/Lab_CSDL_WEB
@@ -77,7 +108,7 @@ python manage.py runserver 0.0.0.0:8000
 
 Backend sẽ chạy tại: `http://localhost:8000/api`
 
-### Bước 3: Cài Đặt Frontend
+#### Bước 3: Cài Đặt Frontend
 
 **Mở terminal khác:**
 ```bash
@@ -91,6 +122,58 @@ npm start
 ```
 
 Frontend sẽ mở tại: `http://localhost:3000`
+
+## 🐳 Docker Setup
+
+### Cấu Trúc Docker
+
+```
+ClassicModels Dashboard
+├── docker-compose.yml      # Orchestration cho MySQL + Django
+├── Dockerfile.backend      # Container cho Django backend
+├── docker.sh              # Script quản lý Docker
+├── .dockerignore          # Loại trừ files khỏi build
+└── mysqlsampledatabase.sql # Database schema & data
+```
+
+### Lệnh Docker
+
+```bash
+# Khởi động tất cả services
+./docker.sh start
+
+# Dừng services
+./docker.sh stop
+
+# Khởi động lại
+./docker.sh restart
+
+# Xem logs
+./docker.sh logs          # Tất cả logs
+./docker.sh logs mysql    # Chỉ MySQL logs
+./docker.sh logs backend  # Chỉ Django logs
+
+# Kết nối shell
+./docker.sh shell mysql   # MySQL shell
+./docker.sh shell backend # Django container shell
+
+# Kiểm tra trạng thái
+./docker.sh status
+
+# Dọn dẹp (xóa containers, volumes)
+./docker.sh clean
+```
+
+### Cấu Hình Database
+
+**Docker MySQL:**
+- **Host**: localhost:3306
+- **Database**: classicmodels
+- **Username**: django_user
+- **Password**: django_password
+- **Root Password**: rootpassword
+
+**Volume**: `mysql_data` - Persistent storage cho database
 
 ## API Endpoints
 

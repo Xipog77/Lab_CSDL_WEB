@@ -3,12 +3,14 @@ import { Layout, Menu } from 'antd';
 import {
   SearchOutlined,
   BarChartOutlined,
+  MessageOutlined,
 } from '@ant-design/icons';
 import CustomerSearch from './components/CustomerSearch';
 import OrderSearch from './components/OrderSearch';
 import CustomerStatistics from './components/CustomerStatistics';
 import OrderStatistics from './components/OrderStatistics';
 import ProductStatistics from './components/ProductStatistics';
+import ChatBox from './components/ChatBox';
 import './App.css';
 
 const { Header, Sider, Content, Footer } = Layout;
@@ -41,6 +43,14 @@ function App() {
         { key: 'product-stats', label: 'Product Statistics' },
       ],
     },
+    {
+      key: 'chat',
+      label: 'Chat Assistant',
+      icon: <MessageOutlined />,
+      children: [
+        { key: 'chatbox', label: 'Virtual Assistant' },
+      ],
+    },
   ];
 
   const renderContent = () => {
@@ -55,6 +65,8 @@ function App() {
         return <OrderStatistics />;
       case 'product-stats':
         return <ProductStatistics />;
+      case 'chatbox':
+        return <ChatBox />;
       default:
         return <CustomerSearch />;
     }
@@ -98,6 +110,7 @@ function App() {
             {currentPage === 'customer-stats' && 'Customer Statistics & Pivot Tables'}
             {currentPage === 'order-stats' && 'Order Statistics & Analytics'}
             {currentPage === 'product-stats' && 'Product Statistics & Analytics'}
+            {currentPage === 'chatbox' && 'Virtual Assistant - Chat Support'}
           </h3>
         </Header>
 
